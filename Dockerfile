@@ -12,6 +12,7 @@ RUN adduser -D builder \
 RUN install -d -o builder -g builder /home/builder/.abuild/
 
 COPY sudo.conf /etc/
+RUN chmod 440 /etc/sudo.conf
 
 USER builder
 WORKDIR /home/builder
