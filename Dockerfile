@@ -18,9 +18,9 @@ USER builder
 WORKDIR /home/builder
 COPY entrypoint.sh .
 RUN sudo chmod +x entrypoint.sh
-RUN mkdir packages
+RUN mkdir keys packages
 
 VOLUME /home/builder/keys
 VOLUME /home/builder/packages
 
-ENTRYPOINT ./entrypoint.sh
+ENTRYPOINT ["./entrypoint.sh"]
