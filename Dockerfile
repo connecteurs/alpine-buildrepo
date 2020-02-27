@@ -5,6 +5,10 @@ RUN apk add --no-cache \
   alpine-sdk \
   aports-build
 
+COPY --from=registry.gitlab.com/les-connecteurs/docker/directory-index \
+  /bin/directory_index \
+  /bin/directory_index
+
 RUN adduser -D builder \
   && addgroup builder abuild \
   && echo 'builder ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
