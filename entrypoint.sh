@@ -15,8 +15,9 @@ PUBKEY_PATH="$PRIVKEY_PATH.pub"
 if ! [ -f "$PRIVKEY_PATH" ]; then
   mkdir -p "$HOME/keys"
   openssl genrsa -out "$PRIVKEY_PATH" 2048
-  openssl rsa -in "$PRIVKEY_PATH" -pubout -out "$PUBKEY_PATH"
 fi
+
+openssl rsa -in "$PRIVKEY_PATH" -pubout -out "$PUBKEY_PATH"
 
 sudo cp -v "$PUBKEY_PATH" /etc/apk/keys/
 cp "$PUBKEY_PATH" "$HOME/packages/"
