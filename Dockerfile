@@ -1,9 +1,10 @@
-FROM alpine:3.11
+FROM alpine:3.12
 
 RUN apk add --no-cache \
   alpine-conf \
   alpine-sdk \
-  aports-build
+  aports-build \
+  sudo
 
 COPY --from=registry.gitlab.com/les-connecteurs/docker/directory-index \
   /bin/directory_index \
