@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM registry.gitlab.com/les-connecteurs/docker/alpine
 
 RUN apk add --no-cache \
   alpine-conf \
