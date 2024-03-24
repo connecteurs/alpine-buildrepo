@@ -6,7 +6,7 @@ RUN apk add --no-cache \
   aports-build \
   sudo
 
-COPY --from=registry.gitlab.com/les-connecteurs/docker/directory-index \
+COPY --from=ghcr.io/connecteurs/directory-index \
   /bin/directory_index \
   /bin/directory_index
 
