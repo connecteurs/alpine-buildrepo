@@ -1,4 +1,4 @@
-FROM ghcr.io/connecteurs/alpine
+FROM ghcr.io/connecteurs/alpine:v3.19.1
 
 RUN apk add --no-cache \
   alpine-conf \
@@ -6,7 +6,7 @@ RUN apk add --no-cache \
   aports-build \
   sudo
 
-COPY --from=ghcr.io/connecteurs/directory-index \
+COPY --from=ghcr.io/connecteurs/directory-index:v0.2.0 \
   /bin/directory_index \
   /bin/directory_index
 
